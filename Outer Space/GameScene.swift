@@ -17,7 +17,6 @@ class GameScene: SKScene {
     var joystickKnob: SKNode?
     var cameraNode : SKCameraNode?
     var mountain1 : SKNode?
-    var mountain2 : SKNode?
     
     // Joystick
     var joystickAction = false
@@ -37,9 +36,8 @@ class GameScene: SKScene {
         joystick = childNode(withName: "joystick")
         joystickKnob = joystick?.childNode(withName: "knob")
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
-        mountain1 = childNode(withName: "mountain1")
-        mountain2 = childNode(withName: "mountain2")
-        
+        mountain1 = childNode(withName: "camadas")
+            
         playerStateMachine = GKStateMachine(states: [
         JumpingState(playerNode: player!),
         WalkingState(playerNode: player!),
@@ -153,12 +151,9 @@ extension GameScene{
         }
         player?.run(faceAction)
         
-        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-10), duration: 0.0)
-        mountain1?.run(parallax1)
-            
-        let parallax2 = SKAction.moveTo(x: (player?.position.x)!/(-20), duration: 0.0)
-        mountain2?.run(parallax2)
-        
+//        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-10), duration: 0.0)
+//        mountain1?.run(parallax1)
+//
     }
 }
 
