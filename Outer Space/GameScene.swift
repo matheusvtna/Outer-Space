@@ -13,6 +13,7 @@ class GameScene: SKScene {
  
     // Nodes
     var player: SKNode?
+    var shadow : SKNode?
     var joystick: SKNode?
     var joystickKnob: SKNode?
     var cameraNode : SKCameraNode?
@@ -33,6 +34,7 @@ class GameScene: SKScene {
         physicsWorld.contactDelegate = self
         
         player = childNode(withName: "player")
+        shadow = childNode(withName: "shadow")
         joystick = childNode(withName: "joystick")
         joystickKnob = joystick?.childNode(withName: "knob")
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
@@ -151,6 +153,8 @@ extension GameScene{
         }
         player?.run(faceAction)
         
+        shadow?.position = CGPoint(x: player!.position.x, y: player!.position.y - 47)
+        
 //        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-10), duration: 0.0)
 //        mountain1?.run(parallax1)
 //
@@ -179,7 +183,7 @@ extension GameScene: SKPhysicsContactDelegate {
         let collision = Collision(masks: (first: contact.bodyA.categoryBitMask, second: contact.bodyB.categoryBitMask))
         
         if collision.matches(.player, .killing) {
-            print("No ceu tem pão?")
+            print("Ih, morreu!")
             let die = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0.0)
             player?.run(die)
         }
