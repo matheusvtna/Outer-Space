@@ -10,7 +10,6 @@ import UIKit
 
 class TransportViewController: UIViewController{
     
-    
     @IBOutlet var planet0: UIButton!
     @IBOutlet var planet1: UIButton!
     @IBOutlet var planet2: UIButton!
@@ -24,7 +23,6 @@ class TransportViewController: UIViewController{
         
         label.text = "Planeta longe demais!"
         label.isHidden = true
-        
     }
     
     override var prefersStatusBarHidden: Bool {
