@@ -31,6 +31,10 @@ class TransportViewController: UIViewController{
         return true
     }
     
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     @IBAction func touchBackButton() {
         print("Touch up back button - Transport")
         self.dismiss(animated: true, completion: nil)

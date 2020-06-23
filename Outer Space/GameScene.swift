@@ -117,8 +117,16 @@ extension GameScene{
         cameraNode?.position.x = player!.position.x
         
         // Joystick position
-        joystick?.position.y = (cameraNode?.position.y)! - 100
-        joystick?.position.x = (cameraNode?.position.x)! - 300
+        var xPositionToView = CGFloat(0)
+        var yPositionToView = CGFloat(0)
+
+        if let view = self.view {
+            xPositionToView = view.frame.width/3 + view.safeAreaInsets.left
+            yPositionToView = view.frame.height/4 + view.safeAreaInsets.bottom
+        }
+
+        joystick?.position.y = (cameraNode?.position.y)! - yPositionToView
+        joystick?.position.x = (cameraNode?.position.x)! - xPositionToView
         
         // Player movement
         guard let joystickKnob = joystickKnob else { return }

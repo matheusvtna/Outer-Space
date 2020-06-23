@@ -10,6 +10,11 @@ import UIKit
 
 class ConfigViewController: UIViewController{
     
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var switchSounds: UISwitch!
+    @IBOutlet var switchMusic: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +24,9 @@ class ConfigViewController: UIViewController{
         return true
     }
     
-    @IBOutlet var backButton: UIButton!
-    @IBOutlet var resetButton: UIButton!
-    @IBOutlet var switchSounds: UISwitch!
-    @IBOutlet var switchMusic: UISwitch!
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
     @IBAction func touchBackButton() {
         print("Touch up back button - Config")
