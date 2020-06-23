@@ -72,7 +72,7 @@ class IdleState : PlayerState {
         }
     }
 
-    let textures = SKTexture(imageNamed: "player/0")
+    let textures = SKTexture(imageNamed: "playerIdle")
     lazy var action = { SKAction.animate(with: [textures], timePerFrame: 0.1)} ()
 
     override func didEnter(from previousState: GKState?) {
