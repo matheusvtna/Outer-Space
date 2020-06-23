@@ -30,19 +30,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-cN-ic8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-cN-ic8">
                                 <rect key="frame" x="-10" y="-3" width="916" height="421"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11d-JG-cHp">
-                                <rect key="frame" x="745" y="307" width="60" height="60"/>
+                                <rect key="frame" x="819" y="344" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ConfigButton"/>
+                                <state key="normal" image="settings"/>
                                 <connections>
                                     <action selector="touchConfigButton" destination="P9S-kd-wxM" eventType="touchUpInside" id="aJC-xn-bhg"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="portal_1" translatesAutoresizingMaskIntoConstraints="NO" id="o6f-0q-h13">
+                                <rect key="frame" x="265" y="34" width="382" height="342"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="name" translatesAutoresizingMaskIntoConstraints="NO" id="O7E-RW-9gk">
+                                <rect key="frame" x="195" y="161" width="301" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textura" translatesAutoresizingMaskIntoConstraints="NO" id="9ph-fY-WJG">
+                                <rect key="frame" x="0.0" y="-3" width="896" height="417"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toque para continuar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n81-dU-1wo">
+                                <rect key="frame" x="383" y="381" width="132" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -51,6 +70,10 @@
                     <connections>
                         <outlet property="backgroundMenu" destination="BjO-cN-ic8" id="zFu-pL-BIj"/>
                         <outlet property="configButton" destination="11d-JG-cHp" id="4y4-TY-JxL"/>
+                        <outlet property="nomeLogo" destination="O7E-RW-9gk" id="t2l-AX-kYq"/>
+                        <outlet property="portalLogo" destination="o6f-0q-h13" id="0MY-tY-lsM"/>
+                        <outlet property="textura" destination="9ph-fY-WJG" id="dex-f0-mOa"/>
+                        <outlet property="toque" destination="n81-dU-1wo" id="ObL-gm-DIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl4-zl-qM2" sceneMemberID="firstResponder"/>
@@ -241,8 +264,6 @@
     </scenes>
     <resources>
         <image name="ConfigBackground" width="3780" height="1746"/>
-        <image name="ConfigButton" width="512" height="512"/>
-        <image name="MenuBackground" width="1891" height="874"/>
         <image name="Planeta1" width="34" height="34"/>
         <image name="Planeta2" width="34" height="34"/>
         <image name="Planeta3" width="34" height="34"/>
@@ -250,5 +271,10 @@
         <image name="Planeta5" width="26" height="26"/>
         <image name="TransportBackground" width="1891" height="874"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="menuBackground" width="1890" height="873"/>
+        <image name="name" width="517" height="357"/>
+        <image name="portal_1" width="1107" height="1088"/>
+        <image name="settings" width="82" height="82"/>
+        <image name="textura" width="1890" height="873"/>
     </resources>
 </document>

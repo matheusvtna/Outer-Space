@@ -12,6 +12,10 @@ class MenuViewController: UIViewController {
     
     @IBOutlet var configButton: UIButton!
     @IBOutlet weak var backgroundMenu: UIImageView!
+    @IBOutlet weak var nomeLogo: UIImageView!
+    @IBOutlet weak var portalLogo: UIImageView!
+    @IBOutlet weak var textura: UIImageView!
+    @IBOutlet weak var toque: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,41 @@ class MenuViewController: UIViewController {
                 
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         view.addGestureRecognizer(tap)
+        //animando nome
+        UIImageView.animate(withDuration: 1.5, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+            self.nomeLogo.transform = CGAffineTransform(scaleX: 1.06, y: 1.06)
+        }) { _ in
+            
+        }
+        UIImageView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+            self.toque.alpha = 0.3
+            self.toque.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+        }) { _ in
+            
+        }
+        UIImageView.animate(withDuration: 30.0, delay: 0.0, options: [.repeat, .autoreverse], animations: {
+            self.textura.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+
+        }) { _ in
+            
+        }
+        //animando portal
+        UIImageView.animate(withDuration: 2.0, delay: 1.0, options: [.repeat, .autoreverse], animations: {
+            self.rotateAnimation(imageView: self.portalLogo)
+             self.portalLogo.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+        }) { _ in
+            
+        }
+    }
+    
+    func rotateAnimation(imageView: UIImageView,duration: CFTimeInterval = 30.0) {
+        let rotate = CABasicAnimation(keyPath: "transform.rotation")
+        rotate.fromValue = 0.0
+        rotate.toValue = CGFloat.pi * 2
+        rotate.duration = duration
+        rotate.repeatCount = .greatestFiniteMagnitude
+
+        imageView.layer.add(rotate, forKey: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
