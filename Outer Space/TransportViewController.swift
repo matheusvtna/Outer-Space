@@ -10,6 +10,7 @@ import UIKit
 
 class TransportViewController: UIViewController{
     
+   
     @IBOutlet var planet0: UIButton!
     @IBOutlet var planet1: UIButton!
     @IBOutlet var planet2: UIButton!
@@ -40,7 +41,7 @@ class TransportViewController: UIViewController{
     
     @IBAction func touchPlanet(_ sender: UIButton) {
         
-        if(sender == planet0 || sender == planet1){
+        if(sender == planet0){
             print("Toquei no planeta")
             
             let gameView = storyboard?.instantiateViewController(identifier: "GameViewController") as! GameViewController
