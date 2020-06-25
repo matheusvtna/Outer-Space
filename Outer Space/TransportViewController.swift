@@ -43,25 +43,26 @@ class TransportViewController: UIViewController{
         self.onda1.alpha = 0.1
         self.onda2.alpha = 0.1
         self.onda3.alpha = 0.1
-            UIImageView.animate(withDuration: 0.7, delay: 1.0, animations: {
-                self.onda1.alpha = 1
-            }, completion: { (value: Bool) in
-                UIImageView.animate(withDuration: 0.7,
-                                    animations: {
-                                        self.onda1.alpha = 0.1
-                                        self.onda2.alpha = 1
-                },completion: { _ in
-                    UIButton.animate(withDuration: 0.7, animations:  {
-                        self.onda2.alpha = 0.1
-                        self.onda3.alpha = 1
-                    },completion: {_ in
-                        UIButton.animate(withDuration: 0.7){
-                            self.onda3.alpha = 0.1
-                            self.animateRadar()
-                        }
-                    })
+        
+        UIImageView.animate(withDuration: 0.7, delay: 1.0, animations: {
+            self.onda1.alpha = 1
+        }, completion: { (value: Bool) in
+            UIImageView.animate(withDuration: 0.7,
+                                animations: {
+                                    self.onda1.alpha = 0.1
+                                    self.onda2.alpha = 1
+            },completion: { _ in
+                UIButton.animate(withDuration: 0.7, animations:  {
+                    self.onda2.alpha = 0.1
+                    self.onda3.alpha = 1
+                },completion: {_ in
+                    UIButton.animate(withDuration: 0.7){
+                        self.onda3.alpha = 0.1
+                        self.animateRadar()
+                    }
                 })
             })
+        })
     }
     
     @IBAction func touchBackButton() {
