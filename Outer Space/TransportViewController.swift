@@ -27,10 +27,19 @@ class TransportViewController: UIViewController{
         
         label.text = "Planeta longe demais!"
         label.isHidden = true
-        teste()
+        animateRadar()
         
     }
-    func teste() {
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    func animateRadar() {
         self.onda1.alpha = 0.1
         self.onda2.alpha = 0.1
         self.onda3.alpha = 0.1
@@ -48,20 +57,11 @@ class TransportViewController: UIViewController{
                     },completion: {_ in
                         UIButton.animate(withDuration: 0.7){
                             self.onda3.alpha = 0.1
-                            self.teste()
+                            self.animateRadar()
                         }
                     })
                 })
             })
-    }
-    
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    override var shouldAutorotate: Bool {
-        return true
     }
     
     @IBAction func touchBackButton() {
