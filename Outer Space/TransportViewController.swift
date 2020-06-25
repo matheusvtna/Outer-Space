@@ -10,7 +10,7 @@ import UIKit
 
 class TransportViewController: UIViewController{
     
-   
+    
     @IBOutlet var planetaTutorial: UIButton!
     @IBOutlet var planetaLaranja: UIButton!
     @IBOutlet var planetaFogoGelo: UIButton!
@@ -18,12 +18,17 @@ class TransportViewController: UIViewController{
     @IBOutlet var planetaTerra: UIButton!
     @IBOutlet var label: UILabel!
     @IBOutlet var backButton: UIButton!
+    @IBOutlet var onda1: UIImageView!
+    @IBOutlet var onda2: UIImageView!
+    @IBOutlet var onda3: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         label.text = "Planeta longe demais!"
         label.isHidden = true
+        animateRadar()
+        
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -32,6 +37,32 @@ class TransportViewController: UIViewController{
     
     override var shouldAutorotate: Bool {
         return true
+    }
+    
+    func animateRadar() {
+        self.onda1.alpha = 0.1
+        self.onda2.alpha = 0.1
+        self.onda3.alpha = 0.1
+        
+        UIImageView.animate(withDuration: 0.7, delay: 1.0, animations: {
+            self.onda1.alpha = 1
+        }, completion: { (value: Bool) in
+            UIImageView.animate(withDuration: 0.7,
+                                animations: {
+                                    self.onda1.alpha = 0.1
+                                    self.onda2.alpha = 1
+            },completion: { _ in
+                UIButton.animate(withDuration: 0.7, animations:  {
+                    self.onda2.alpha = 0.1
+                    self.onda3.alpha = 1
+                },completion: {_ in
+                    UIButton.animate(withDuration: 0.7){
+                        self.onda3.alpha = 0.1
+                        self.animateRadar()
+                    }
+                })
+            })
+        })
     }
     
     @IBAction func touchBackButton() {
