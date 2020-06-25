@@ -329,11 +329,11 @@
                     <connections>
                         <outlet property="backButton" destination="iPm-A8-NGg" id="NAe-as-uE0"/>
                         <outlet property="label" destination="s26-fz-xJL" id="Vsc-dR-VvE"/>
-                        <outlet property="planet0" destination="tYu-aW-nYh" id="GDP-vb-Eh8"/>
-                        <outlet property="planet1" destination="bDx-Pu-9Me" id="FOf-O8-Hfk"/>
-                        <outlet property="planet2" destination="VON-7g-ccg" id="naW-Ri-Pee"/>
-                        <outlet property="planet3" destination="gMi-UU-1AD" id="z79-Bn-xRQ"/>
-                        <outlet property="planet4" destination="ZJI-xD-szI" id="fgE-gR-I5t"/>
+                        <outlet property="planetaFogoGelo" destination="VON-7g-ccg" id="naW-Ri-Pee"/>
+                        <outlet property="planetaLaranja" destination="bDx-Pu-9Me" id="FOf-O8-Hfk"/>
+                        <outlet property="planetaRoxo" destination="gMi-UU-1AD" id="z79-Bn-xRQ"/>
+                        <outlet property="planetaTerra" destination="ZJI-xD-szI" id="fgE-gR-I5t"/>
+                        <outlet property="planetaTutorial" destination="tYu-aW-nYh" id="GDP-vb-Eh8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWP-KB-J0y" sceneMemberID="firstResponder"/>
