@@ -229,56 +229,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TransportBackground" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-DB-kPX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fundo-planetas" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-DB-kPX">
                                 <rect key="frame" x="-7" y="-6" width="908" height="422"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VON-7g-ccg">
-                                <rect key="frame" x="715" y="278" width="34" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Planeta3"/>
-                                <connections>
-                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="mnk-W8-cQb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPm-A8-NGg">
                                 <rect key="frame" x="72" y="25" width="21" height="22"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
                                 <connections>
                                     <action selector="touchBackButton" destination="tv0-vE-ENn" eventType="touchUpInside" id="5yO-SZ-msz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYu-aW-nYh">
-                                <rect key="frame" x="431" y="190" width="34" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Planeta1"/>
-                                <connections>
-                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="2eW-jF-gL3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDx-Pu-9Me">
-                                <rect key="frame" x="526" y="103" width="34" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Planeta2"/>
-                                <connections>
-                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="jKj-qM-GS4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJI-xD-szI">
-                                <rect key="frame" x="76" y="157" width="26" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Planeta5"/>
-                                <connections>
-                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="MlS-fb-SnG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMi-UU-1AD">
-                                <rect key="frame" x="188" y="329" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Planeta4"/>
-                                <connections>
-                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="J5s-W1-DI0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para onde você deseja viajar?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRU-xQ-86t">
@@ -295,6 +255,65 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planeta-terra" translatesAutoresizingMaskIntoConstraints="NO" id="FJK-O9-NHc">
+                                <rect key="frame" x="99" y="106" width="104" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planeta-tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="vdh-AP-9on">
+                                <rect key="frame" x="388" y="170" width="119" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planeta-laranja" translatesAutoresizingMaskIntoConstraints="NO" id="sU4-af-23c">
+                                <rect key="frame" x="689" y="76" width="100" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planeta-roxo" translatesAutoresizingMaskIntoConstraints="NO" id="WIr-VH-oBJ">
+                                <rect key="frame" x="72" y="265" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planeta-fogoGelo" translatesAutoresizingMaskIntoConstraints="NO" id="2kz-kf-l5Z">
+                                <rect key="frame" x="701" y="302" width="130" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vinheta" translatesAutoresizingMaskIntoConstraints="NO" id="OOk-Vj-f48">
+                                <rect key="frame" x="-7" y="0.0" width="908" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJI-xD-szI" userLabel="PlanetTerra">
+                                <rect key="frame" x="122" y="106" width="59" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="MlS-fb-SnG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMi-UU-1AD" userLabel="PlanetRoxo">
+                                <rect key="frame" x="156" y="302" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="J5s-W1-DI0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VON-7g-ccg" userLabel="Planet-fogoGelo">
+                                <rect key="frame" x="740" y="304" width="59" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="mnk-W8-cQb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDx-Pu-9Me" userLabel="Planet-laranja">
+                                <rect key="frame" x="711" y="76" width="56" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="jKj-qM-GS4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYu-aW-nYh" userLabel="Planet-Tutorial">
+                                <rect key="frame" x="402" y="170" width="91" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="touchPlanet:" destination="tv0-vE-ENn" eventType="touchUpInside" id="2eW-jF-gL3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -310,31 +329,32 @@
                     <connections>
                         <outlet property="backButton" destination="iPm-A8-NGg" id="NAe-as-uE0"/>
                         <outlet property="label" destination="s26-fz-xJL" id="Vsc-dR-VvE"/>
-                        <outlet property="planet0" destination="tYu-aW-nYh" id="GDP-vb-Eh8"/>
-                        <outlet property="planet1" destination="bDx-Pu-9Me" id="FOf-O8-Hfk"/>
-                        <outlet property="planet2" destination="VON-7g-ccg" id="naW-Ri-Pee"/>
-                        <outlet property="planet3" destination="gMi-UU-1AD" id="z79-Bn-xRQ"/>
-                        <outlet property="planet4" destination="ZJI-xD-szI" id="fgE-gR-I5t"/>
+                        <outlet property="planetaFogoGelo" destination="VON-7g-ccg" id="naW-Ri-Pee"/>
+                        <outlet property="planetaLaranja" destination="bDx-Pu-9Me" id="FOf-O8-Hfk"/>
+                        <outlet property="planetaRoxo" destination="gMi-UU-1AD" id="z79-Bn-xRQ"/>
+                        <outlet property="planetaTerra" destination="ZJI-xD-szI" id="fgE-gR-I5t"/>
+                        <outlet property="planetaTutorial" destination="tYu-aW-nYh" id="GDP-vb-Eh8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWP-KB-J0y" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="1128"/>
+            <point key="canvasLocation" x="-834.375" y="1127.536231884058"/>
         </scene>
     </scenes>
     <resources>
         <image name="ConfigBackground" width="3780" height="1746"/>
-        <image name="Planeta1" width="34" height="34"/>
-        <image name="Planeta2" width="34" height="34"/>
-        <image name="Planeta3" width="34" height="34"/>
-        <image name="Planeta4" width="40" height="40"/>
-        <image name="Planeta5" width="26" height="26"/>
-        <image name="TransportBackground" width="1891" height="874"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="fundo-planetas" width="896" height="414"/>
         <image name="menuBackground" width="1890" height="873"/>
         <image name="name" width="517" height="357"/>
+        <image name="planeta-fogoGelo" width="82" height="84"/>
+        <image name="planeta-laranja" width="59" height="58"/>
+        <image name="planeta-roxo" width="315" height="223"/>
+        <image name="planeta-terra" width="69" height="68"/>
+        <image name="planeta-tutorial" width="71" height="71"/>
         <image name="portal_1" width="1107" height="1088"/>
         <image name="settings" width="82" height="82"/>
         <image name="textura" width="1890" height="873"/>
+        <image name="vinheta" width="896" height="414"/>
     </resources>
 </document>
