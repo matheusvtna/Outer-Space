@@ -79,12 +79,17 @@ class TransportViewController: UIViewController{
             self.present(gameView, animated: true, completion: nil)
         }
         else{
+            label.alpha = 0
             label.isHidden = false
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.label.isHidden = true
+            UILabel.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
+                self.label.alpha = 1
+            }) { _ in
+                UILabel.animate(withDuration: 0.2, delay: 1.5, options: .curveLinear, animations: {
+                    self.label.alpha = 0
+                }) { _ in
+                    self.label.isHidden = true
+                }
             }
         }
-        
     }
 }

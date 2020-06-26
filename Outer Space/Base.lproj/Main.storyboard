@@ -128,7 +128,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConfigBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Oyy-FQ-ofT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Oyy-FQ-ofT">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portal" translatesAutoresizingMaskIntoConstraints="NO" id="3Oh-75-FjI">
+                                <rect key="frame" x="462" y="-69.5" width="595" height="556"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Oh-75-FjI" secondAttribute="height" multiplier="705:556" constant="-110.00000000000011" id="vcH-YB-uBT"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textura" translatesAutoresizingMaskIntoConstraints="NO" id="Z6s-sL-RH9">
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-MG-Ejh">
@@ -157,12 +166,14 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eat-cX-7lY">
                                 <rect key="frame" x="305" y="159" width="51" height="31"/>
+                                <color key="onTintColor" red="0.36078431372549019" green="0.5725490196078431" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="changeSwitch:" destination="RxF-wi-MLf" eventType="valueChanged" id="DLR-sE-64R"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSF-oL-FNX">
                                 <rect key="frame" x="305" y="218" width="51" height="31"/>
+                                <color key="onTintColor" red="0.36078431372549019" green="0.5725490196078431" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="changeSwitch:" destination="RxF-wi-MLf" eventType="valueChanged" id="FNF-X1-Tao"/>
                                 </connections>
@@ -175,7 +186,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm4-av-r2v">
-                                <rect key="frame" x="198.5" y="313" width="107" height="34"/>
+                                <rect key="frame" x="183" y="313" width="138" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="Ixb-c5-5hP"/>
+                                    <constraint firstAttribute="height" constant="34" id="SxT-nX-SkC"/>
+                                </constraints>
                                 <state key="normal" title="Reseter Jogo">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -190,9 +205,12 @@
                             <constraint firstItem="Eat-cX-7lY" firstAttribute="top" secondItem="WCo-GQ-Dur" secondAttribute="top" constant="159" id="3vA-v0-3qH"/>
                             <constraint firstItem="Teh-rD-0Xn" firstAttribute="leading" secondItem="WCo-GQ-Dur" secondAttribute="leading" constant="152" id="5Nj-jo-1uu"/>
                             <constraint firstItem="ivE-RR-R98" firstAttribute="leading" secondItem="WCo-GQ-Dur" secondAttribute="leading" constant="119" id="5th-7v-lq3"/>
+                            <constraint firstItem="Z6s-sL-RH9" firstAttribute="top" secondItem="WCo-GQ-Dur" secondAttribute="top" id="8OM-SW-nse"/>
                             <constraint firstItem="ivE-RR-R98" firstAttribute="top" secondItem="U0v-jT-1Uq" secondAttribute="bottom" constant="33" id="IJX-Ab-G64"/>
+                            <constraint firstItem="Z6s-sL-RH9" firstAttribute="centerY" secondItem="WCo-GQ-Dur" secondAttribute="centerY" constant="10.5" id="ONd-s3-pzd"/>
                             <constraint firstItem="U0v-jT-1Uq" firstAttribute="leading" secondItem="WCo-GQ-Dur" secondAttribute="leading" constant="119" id="QAM-we-9C9"/>
                             <constraint firstItem="Oyy-FQ-ofT" firstAttribute="top" secondItem="WCo-GQ-Dur" secondAttribute="top" id="QDJ-IO-n24"/>
+                            <constraint firstItem="3Oh-75-FjI" firstAttribute="width" secondItem="COL-Rj-735" secondAttribute="height" multiplier="235:138" constant="-110" id="RsA-se-Itp"/>
                             <constraint firstItem="dI5-MG-Ejh" firstAttribute="top" secondItem="WCo-GQ-Dur" secondAttribute="top" constant="25" id="SKk-1V-eRd"/>
                             <constraint firstItem="dI5-MG-Ejh" firstAttribute="leading" secondItem="WCo-GQ-Dur" secondAttribute="leading" constant="28" id="YBe-dK-b0a"/>
                             <constraint firstItem="Sm4-av-r2v" firstAttribute="centerX" secondItem="Teh-rD-0Xn" secondAttribute="centerX" id="Yeo-M6-dL5"/>
@@ -201,8 +219,12 @@
                             <constraint firstItem="Teh-rD-0Xn" firstAttribute="top" secondItem="WCo-GQ-Dur" secondAttribute="top" constant="91" id="hIR-hH-2MS"/>
                             <constraint firstItem="Oyy-FQ-ofT" firstAttribute="centerX" secondItem="COL-Rj-735" secondAttribute="centerX" id="i7M-GF-hDM"/>
                             <constraint firstItem="Eat-cX-7lY" firstAttribute="leading" secondItem="WCo-GQ-Dur" secondAttribute="leading" constant="261" id="iol-sy-PsJ"/>
+                            <constraint firstItem="Z6s-sL-RH9" firstAttribute="centerX" secondItem="WCo-GQ-Dur" secondAttribute="centerX" id="jju-oT-OtW"/>
+                            <constraint firstItem="3Oh-75-FjI" firstAttribute="trailing" secondItem="WCo-GQ-Dur" secondAttribute="trailing" constant="205" id="js7-Rl-GZo"/>
                             <constraint firstItem="XSF-oL-FNX" firstAttribute="leading" secondItem="ivE-RR-R98" secondAttribute="trailing" constant="87" id="nJT-QA-6TT"/>
                             <constraint firstItem="Sm4-av-r2v" firstAttribute="top" secondItem="ivE-RR-R98" secondAttribute="bottom" constant="69" id="ncf-Jd-u7E"/>
+                            <constraint firstItem="3Oh-75-FjI" firstAttribute="centerY" secondItem="WCo-GQ-Dur" secondAttribute="centerY" constant="12" id="o81-f6-72n"/>
+                            <constraint firstItem="WCo-GQ-Dur" firstAttribute="leading" secondItem="Z6s-sL-RH9" secondAttribute="leading" constant="44" id="sYG-gV-iVb"/>
                             <constraint firstItem="Oyy-FQ-ofT" firstAttribute="centerY" secondItem="COL-Rj-735" secondAttribute="centerY" id="ssO-XD-rF8"/>
                             <constraint firstItem="Eat-cX-7lY" firstAttribute="leading" secondItem="U0v-jT-1Uq" secondAttribute="trailing" constant="22" id="ujL-bp-dZS"/>
                             <constraint firstItem="U0v-jT-1Uq" firstAttribute="top" secondItem="Teh-rD-0Xn" secondAttribute="bottom" constant="57" id="uqm-4x-zDx"/>
@@ -211,14 +233,16 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="dI5-MG-Ejh" id="klz-jg-Hmf"/>
+                        <outlet property="portal" destination="3Oh-75-FjI" id="tGU-tX-dVF"/>
                         <outlet property="resetButton" destination="Sm4-av-r2v" id="vj7-ND-aqK"/>
                         <outlet property="switchMusic" destination="XSF-oL-FNX" id="AXo-X4-A2O"/>
                         <outlet property="switchSounds" destination="Eat-cX-7lY" id="HSl-gJ-Rpp"/>
+                        <outlet property="textura" destination="Z6s-sL-RH9" id="Uoa-7Y-33c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p44-9k-3u9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="106"/>
+            <point key="canvasLocation" x="112.5" y="105.79710144927537"/>
         </scene>
         <!--Transport View Controller-->
         <scene sceneID="qC5-P9-hIL">
@@ -356,7 +380,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ConfigBackground" width="3780" height="1746"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
         <image name="fundo-planetas" width="896" height="414"/>
         <image name="menuBackground" width="1890" height="873"/>
@@ -369,6 +392,7 @@
         <image name="planeta-roxo" width="315" height="223"/>
         <image name="planeta-terra" width="69" height="68"/>
         <image name="planeta-tutorial" width="71" height="71"/>
+        <image name="portal" width="588" height="579"/>
         <image name="portal_1" width="1107" height="1088"/>
         <image name="settings" width="82" height="82"/>
         <image name="textura" width="1890" height="873"/>
