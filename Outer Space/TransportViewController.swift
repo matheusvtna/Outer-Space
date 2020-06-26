@@ -80,7 +80,7 @@ class TransportViewController: UIViewController{
         }
         else{
             label.alpha = 0
-            label.isHidden = false //so tinha isso no anterior e mais abaixo
+            label.isHidden = false
             UILabel.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
                 self.label.alpha = 1
             }) { _ in
@@ -90,15 +90,6 @@ class TransportViewController: UIViewController{
                     self.label.isHidden = true
                 }
             }
-//            //so tinha isso no anterior
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//
-//                UILabel.animate(withDuration: 0.5) {
-//                    self.label.alpha = 0
-//                    self.label.isHidden = true
-//                }
-//            }
         }
-        
     }
 }
