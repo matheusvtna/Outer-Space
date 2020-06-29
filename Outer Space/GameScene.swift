@@ -9,6 +9,30 @@
 import SpriteKit
 import GameplayKit
 
+class Message{
+    var text: String
+    var condition: () -> Bool
+    var duration: Double?
+    var completion: Bool
+    var position: CGPoint
+    var label: SKLabelNode
+    
+    init(text: String, position: CGPoint, condition: @escaping () -> Bool){
+        self.completion = false
+        self.position = position
+        self.text = text
+        self.condition = condition
+        
+        label = SKLabelNode(fontNamed: "Chalkduster")
+        
+        label.numberOfLines = 3
+        label.preferredMaxLayoutWidth = 200
+        label.fontSize = 18
+        label.fontColor = SKColor.black
+        
+    }
+}
+
 class GameScene: SKScene {
  
     // Nodes
@@ -29,6 +53,8 @@ class GameScene: SKScene {
     let playerSpeed = 4.0
     var playerStateMachine : GKStateMachine!
     
+    var messages: [Message] = []
+    
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
@@ -39,7 +65,7 @@ class GameScene: SKScene {
         joystickKnob = joystick?.childNode(withName: "knob")
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
         mountain1 = childNode(withName: "camadas")
-            
+        
         playerStateMachine = GKStateMachine(states: [
         JumpingState(playerNode: player!),
         WalkingState(playerNode: player!),
@@ -47,6 +73,15 @@ class GameScene: SKScene {
         LandingState(playerNode: player!),
         StunnedState(playerNode: player!),
         ])
+        
+        messages = [
+            Message(text: "Use o joystick para se movimentar para onde deseja ir", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -430}),
+            Message(text: "Toque na tela para pular com o jetpack", position: CGPoint(x: -250, y: frame.midY), condition: {(self.player?.position.x)! >= -300}),
+            Message(text: "Abra sua mochila apertando o botão na direita", position: CGPoint(x: 100, y: frame.midY), condition: {(self.player?.position.x)! >= 100}),
+            Message(text: "Toque no portal para entrar", position: CGPoint(x: 400, y: frame.midY - 30), condition: {(self.player?.position.x)! >= 400})
+            
+            
+        ]
  
         playerStateMachine.enter(IdleState.self)
         
@@ -124,7 +159,32 @@ extension GameScene{
             xPositionToView = view.frame.width/3 + view.safeAreaInsets.left
             yPositionToView = view.frame.height/4 + view.safeAreaInsets.bottom
         }
-
+        var index = 0
+        
+        for message in messages{
+            
+            print(self.player?.position.x ?? "")
+            if message.condition(){
+                index += 1
+                if !message.completion{
+                    
+                    message.completion = true
+                    message.label.text = message.text
+                    message.label.position = message.position
+                    addChild(message.label)
+                    
+                }
+                else{
+                    
+                }
+            }
+        }
+        if index > 1{
+            messages[0].label.alpha = 0
+            messages.remove(at: 0)
+            
+        }
+        
         joystick?.position.y = (cameraNode?.position.y)! - yPositionToView
         joystick?.position.x = (cameraNode?.position.x)! - xPositionToView
         

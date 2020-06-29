@@ -25,12 +25,15 @@ class JumpingState : PlayerState {
     var hasFinishedJumping : Bool = false
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        //if hasFinishedJumping && stateClass is LandingState.Type { return true }
-
+        //if hasFinishedJumping && stateClass is LandingState.Type {
+        //    return true
+        //}
+        
         return true
     }
+
     
-    let textures : Array<SKTexture> = (0..<2).map({ return "jump/\($0)"}).map(SKTexture.init)
+    let textures : Array<SKTexture> = (0..<4).map({ return "jump/\($0)"}).map(SKTexture.init)
     lazy var action = { SKAction.animate(with: textures, timePerFrame: 0.1)} ()
 
     override func didEnter(from previousState: GKState?) {
