@@ -11,10 +11,12 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    var pauseView: PauseView?
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pauseView = PauseView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        pauseView!.isHidden = true
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
@@ -30,6 +32,15 @@ class GameViewController: UIViewController {
             view.showsFPS = false
             view.showsNodeCount = false
         }
+        
+        let pauseButtonIm = "pause.png"
+        let pauseButtonImage = UIImage(named: pauseButtonIm)
+        let pauseButton = UIButton(frame: CGRect(x: 27, y: 23, width: 15, height: 19))
+        pauseButton.addTarget(nil, action: #selector (tapPauseButton), for: .touchUpInside)
+        pauseButton.setImage(pauseButtonImage, for: .normal)
+        
+        view.addSubview(pauseButton)
+        self.view.addSubview(pauseView!)
     }
 
     override var shouldAutorotate: Bool {
@@ -46,5 +57,9 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @objc func tapPauseButton() {
+        self.pauseView!.isHidden = false
     }
 }
