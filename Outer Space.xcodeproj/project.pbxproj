@@ -22,6 +22,8 @@
 		3E80AB7C248EF48100B065F3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80AB7B248EF48100B065F3 /* MenuViewController.swift */; };
 		3E80AB7E248EF4F200B065F3 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80AB7D248EF4F200B065F3 /* ConfigViewController.swift */; };
 		3E80AB80248EF51700B065F3 /* TransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80AB7F248EF51700B065F3 /* TransportViewController.swift */; };
+		D667F71C24AA833F00672EB9 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D667F71B24AA833F00672EB9 /* PauseView.xib */; };
+		D667F71E24AA837800672EB9 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D667F71D24AA837800672EB9 /* PauseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		3E80AB7B248EF48100B065F3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3E80AB7D248EF4F200B065F3 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		3E80AB7F248EF51700B065F3 /* TransportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportViewController.swift; sourceTree = "<group>"; };
+		D667F71B24AA833F00672EB9 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
+		D667F71D24AA837800672EB9 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				3E693E5C248D84B600057622 /* Assets.xcassets */,
 				3E693E5E248D84B600057622 /* LaunchScreen.storyboard */,
 				3E693E61248D84B600057622 /* Info.plist */,
+				D667F71B24AA833F00672EB9 /* PauseView.xib */,
+				D667F71D24AA837800672EB9 /* PauseView.swift */,
 			);
 			path = "Outer Space";
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				3E693E5B248D84B500057622 /* Main.storyboard in Resources */,
 				3E693E52248D84B400057622 /* GameScene.sks in Resources */,
 				3E693E5D248D84B600057622 /* Assets.xcassets in Resources */,
+				D667F71C24AA833F00672EB9 /* PauseView.xib in Resources */,
 				3E693E60248D84B600057622 /* LaunchScreen.storyboard in Resources */,
 				3E693E54248D84B400057622 /* Actions.sks in Resources */,
 			);
@@ -285,6 +292,7 @@
 				3E80AB80248EF51700B065F3 /* TransportViewController.swift in Sources */,
 				3E693E56248D84B500057622 /* GameScene.swift in Sources */,
 				3E80AB7C248EF48100B065F3 /* MenuViewController.swift in Sources */,
+				D667F71E24AA837800672EB9 /* PauseView.swift in Sources */,
 				3E80AB7E248EF4F200B065F3 /* ConfigViewController.swift in Sources */,
 				3E693E58248D84B500057622 /* GameViewController.swift in Sources */,
 				35A4A06824ABB80B002E8669 /* Message.swift in Sources */,
