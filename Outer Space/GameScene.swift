@@ -9,30 +9,6 @@
 import SpriteKit
 import GameplayKit
 
-class Message{
-    var text: String
-    var condition: () -> Bool
-    var duration: Double?
-    var completion: Bool
-    var position: CGPoint
-    var label: SKLabelNode
-    
-    init(text: String, position: CGPoint, condition: @escaping () -> Bool){
-        self.completion = false
-        self.position = position
-        self.text = text
-        self.condition = condition
-        
-        label = SKLabelNode(fontNamed: "Chalkduster")
-        
-        label.numberOfLines = 3
-        label.preferredMaxLayoutWidth = 200
-        label.fontSize = 18
-        label.fontColor = SKColor.black
-        
-    }
-}
-
 class GameScene: SKScene {
  
     // Nodes
@@ -75,16 +51,16 @@ class GameScene: SKScene {
         ])
         
         messages = [
-            Message(text: "Use o joystick para se movimentar para onde deseja ir", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -430}),
-            Message(text: "Toque na tela para pular com o jetpack", position: CGPoint(x: -250, y: frame.midY), condition: {(self.player?.position.x)! >= -300}),
-            Message(text: "Abra sua mochila apertando o botão na direita", position: CGPoint(x: 100, y: frame.midY), condition: {(self.player?.position.x)! >= 100}),
-            Message(text: "Toque no portal para entrar", position: CGPoint(x: 400, y: frame.midY - 30), condition: {(self.player?.position.x)! >= 400})
-            
+            Message(text: "Use o joystick para se movimentar para onde deseja ir", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -1000}),
+            Message(text: "Toque na tela para pular com o jetpack", position: CGPoint(x: -120, y: frame.midY), condition: {(self.player?.position.x)! >= -300}),
+            Message(text: "Que objeto é esse? Toque para guardá-lo na sua mochila.", position: CGPoint(x: 200, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
+            Message(text: "Se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 250, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 300}),
+            Message(text: "Toque no portal para entrar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
             
         ]
  
         playerStateMachine.enter(IdleState.self)
-        
+        player?.position = CGPoint(x: -1300, y: frame.midY)
     }
     
 }
