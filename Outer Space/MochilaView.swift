@@ -7,22 +7,32 @@
 //
 import UIKit
 
-class MyViewController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MochilaView : UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public let fundo = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 414))
     public let collectionView = UICollectionView(frame: CGRect(x: 10, y: 60, width: 280, height: 354), collectionViewLayout: UICollectionViewFlowLayout())
     public let header = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
+    public let contentView = UIView()
     
-    override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .white
-        fundo.backgroundColor = .black
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        contentView.backgroundColor = .clear
+        fundo.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.137254902, blue: 0.137254902, alpha: 1)
         //header
         header.text = "ITENS RECUPERADOS"
         header.font = UIFont(name: "Nexa Bold", size: 18)
-        header.backgroundColor = .white
+        header.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
         header.textAlignment = .center
-        header.textColor = .black
+        header.textColor = #colorLiteral(red: 0.137254902, green: 0.137254902, blue: 0.137254902, alpha: 1)
         header.layer.masksToBounds = true
         header.layer.cornerRadius = 8
         header.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -31,18 +41,20 @@ class MyViewController : UIViewController, UICollectionViewDelegate, UICollectio
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
         }
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.137254902, blue: 0.137254902, alpha: 1)
     
-        view.addSubview(fundo)
-        view.addSubview(collectionView)
-        view.addSubview(header)
-        self.view = view
+        contentView.addSubview(fundo)
+        contentView.addSubview(collectionView)
+        contentView.addSubview(header)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        contentView.isUserInteractionEnabled = true
+        collectionView.isUserInteractionEnabled = true
+        
+        self.addSubview(contentView)
     }
-    
-    override func viewDidLoad() {
-           collectionView.delegate = self
-           collectionView.dataSource = self
-       }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
@@ -50,7 +62,6 @@ class MyViewController : UIViewController, UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? ContoCollectionViewCell
-        //cell?.backgroundColor = .green
         return cell!
     }
     
@@ -69,15 +80,15 @@ public class ContoCollectionViewCell: UICollectionViewCell {
         super.init(frame:frame)
         //titulo
         titulo.text = "Bilola de Brennand"
-        titulo.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        titulo.textColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
         titulo.font = UIFont(name: "Nexa Bold", size: 14)
         //descricao
         descricao.text = "cu de \"Tese\" o mais importante é expor a ideia central sobre o tema de maneira clara. Importante lembrar que a Introdução é a parte mais importante do texto e por isso deve conter a informações que logo serão desenvolvidas."
-        descricao.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        descricao.textColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
         descricao.numberOfLines = 5
         descricao.font = UIFont(name: "Nexa Light", size: 12)
         //icon
-        icon.image = UIImage(named: "bilola.png")
+        icon.image = UIImage(named: "mochila.png")
 
         self.addSubview(icon)
         self.addSubview(descricao)
