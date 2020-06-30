@@ -29,6 +29,8 @@ class GameScene: SKScene {
     let playerSpeed = 4.0
     var playerStateMachine : GKStateMachine!
     
+    var messages: [Message] = []
+    
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
@@ -39,7 +41,7 @@ class GameScene: SKScene {
         joystickKnob = joystick?.childNode(withName: "knob")
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
         mountain1 = childNode(withName: "camadas")
-            
+        
         playerStateMachine = GKStateMachine(states: [
         JumpingState(playerNode: player!),
         WalkingState(playerNode: player!),
@@ -47,9 +49,18 @@ class GameScene: SKScene {
         LandingState(playerNode: player!),
         StunnedState(playerNode: player!),
         ])
+        
+        messages = [
+            Message(text: "Use o joystick para se movimentar para onde deseja ir", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -1000}),
+            Message(text: "Toque na tela para pular com o jetpack", position: CGPoint(x: -120, y: frame.midY), condition: {(self.player?.position.x)! >= -300}),
+            Message(text: "Que objeto é esse? Toque para guardá-lo na sua mochila.", position: CGPoint(x: 200, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
+            Message(text: "Se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 250, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 300}),
+            Message(text: "Toque no portal para entrar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
+            
+        ]
  
         playerStateMachine.enter(IdleState.self)
-        
+        player?.position = CGPoint(x: -1300, y: frame.midY)
     }
     
 }
@@ -124,7 +135,32 @@ extension GameScene{
             xPositionToView = view.frame.width/3 + view.safeAreaInsets.left
             yPositionToView = view.frame.height/4 + view.safeAreaInsets.bottom
         }
-
+        var index = 0
+        
+        for message in messages{
+            
+            print(self.player?.position.x ?? "")
+            if message.condition(){
+                index += 1
+                if !message.completion{
+                    
+                    message.completion = true
+                    message.label.text = message.text
+                    message.label.position = message.position
+                    addChild(message.label)
+                    
+                }
+                else{
+                    
+                }
+            }
+        }
+        if index > 1{
+            messages[0].label.alpha = 0
+            messages.remove(at: 0)
+            
+        }
+        
         joystick?.position.y = (cameraNode?.position.y)! - yPositionToView
         joystick?.position.x = (cameraNode?.position.x)! - xPositionToView
         

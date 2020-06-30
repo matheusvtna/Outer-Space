@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
         
         pauseView = PauseView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         pauseView!.isHidden = true
+
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             scene = SKScene(fileNamed: "GameScene")
