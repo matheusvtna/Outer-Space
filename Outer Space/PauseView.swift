@@ -15,7 +15,7 @@ class PauseView: UIView {
     @IBOutlet var volume: UIButton!
     @IBOutlet var volumeOff: UIButton!
     func commonInit(){
-            
+        
         Bundle.main.loadNibNamed("PauseView", owner: self, options: nil)
         self.addSubview(contentView)
         
@@ -24,7 +24,7 @@ class PauseView: UIView {
             topMostViewController.scene?.isUserInteractionEnabled = false
         }
     }
-
+    
     @IBAction func volumeFunc(_ sender: Any) {
         volume.isHidden = true
         volumeOff.isHidden = false
@@ -43,15 +43,17 @@ class PauseView: UIView {
         if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
             
             topMostViewController.scene?.isUserInteractionEnabled = true
+            topMostViewController.bag.isUserInteractionEnabled = true
+
         }
     }
     override init(frame: CGRect) {
-            super.init(frame: frame)
-            commonInit()
-            
-        }
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-            commonInit()
-        }
+        super.init(frame: frame)
+        commonInit()
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
 }

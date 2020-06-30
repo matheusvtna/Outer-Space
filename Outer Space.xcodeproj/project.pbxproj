@@ -150,9 +150,9 @@
 				3E693E61248D84B600057622 /* Info.plist */,
 				0892CA5624AA960900DDE6AA /* MochilaView.swift */,
 				3E9A09A524ABDA6B00CB3608 /* MochilaView.xib */,
-				0892CA5124AA90B200DDE6AA /* fonts */,
 				D667F71B24AA833F00672EB9 /* PauseView.xib */,
 				D667F71D24AA837800672EB9 /* PauseView.swift */,
+				0892CA5124AA90B200DDE6AA /* fonts */,
 			);
 			path = "Outer Space";
 			sourceTree = "<group>";

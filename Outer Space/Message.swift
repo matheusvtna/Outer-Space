@@ -23,12 +23,13 @@ class Message{
         self.text = text
         self.condition = condition
         
-        label = SKLabelNode(fontNamed: "Chalkduster")
+        label = SKLabelNode(fontNamed: "Nexa Light")
+        label.horizontalAlignmentMode = .center
         
         label.numberOfLines = 3
         label.preferredMaxLayoutWidth = 200
         label.fontSize = 18
-        label.fontColor = SKColor.black
+        label.fontColor = SKColor(red: 0x23/0xff, green: 0x23/0xff, blue: 0x23/0xff, alpha: 1)
         
     }
 }

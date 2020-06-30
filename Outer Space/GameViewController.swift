@@ -54,10 +54,12 @@ class GameViewController: UIViewController {
         pauseButton.addTarget(nil, action: #selector (tapPauseButton), for: .touchUpInside)
         pauseButton.setImage(pauseButtonImage, for: .normal)
         
-        view.addSubview(pauseButton)
-        self.view.addSubview(pauseView!)
         self.view.addSubview(bag)
         self.view.addSubview(bagView!)
+        
+        self.view.addSubview(pauseButton)
+        self.view.addSubview(pauseView!)
+        
     }
 
     override var shouldAutorotate: Bool {
@@ -101,5 +103,6 @@ class GameViewController: UIViewController {
     @objc func tapPauseButton() {
         self.scene?.isUserInteractionEnabled = false
         self.pauseView!.isHidden = false
+        self.bag.isUserInteractionEnabled = false
     }
 }

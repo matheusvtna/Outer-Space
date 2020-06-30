@@ -51,17 +51,18 @@ class GameScene: SKScene {
         ])
         
         messages = [
-            Message(text: "Use o joystick para se movimentar para onde deseja ir", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -1000}),
-            Message(text: "Toque na tela para pular com o jetpack", position: CGPoint(x: -120, y: frame.midY), condition: {(self.player?.position.x)! >= -300}),
-            Message(text: "Que objeto é esse? Toque para guardá-lo na sua mochila.", position: CGPoint(x: 200, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
-            Message(text: "Se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 250, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 300}),
-            Message(text: "Toque no portal para entrar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
+            Message(text: "use o joystick para se movimentar", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -1000}),
+            Message(text: "toque na tela para pular com o jetpack", position: CGPoint(x: -120, y: frame.midY + 20), condition: {(self.player?.position.x)! >= -300}),
+            Message(text: "que objeto é esse? toque para guardá-lo na sua mochila.", position: CGPoint(x: 200, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
+            Message(text: "se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 250, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 300}),
+            Message(text: "toque no portal para entrar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
             
         ]
  
         playerStateMachine.enter(IdleState.self)
         
-        player?.position = CGPoint(x: -1300, y: frame.midY)
+        let start = SKAction.move(to: CGPoint(x: -900, y: -100), duration: 0.0)
+        player?.run(start)
     }
     
 }
@@ -229,7 +230,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
         if collision.matches(.player, .killing) {
             print("Ih, morreu!")
-            let die = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0.0)
+            let die = SKAction.move(to: CGPoint(x: -800, y: -100), duration: 0.0)
             player?.run(die)
         }
         if collision.matches(.player, .ground){
