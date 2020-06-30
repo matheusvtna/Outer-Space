@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0892CA5424AA913C00DDE6AA /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0892CA5224AA911600DDE6AA /* Nexa Bold.otf */; };
+		0892CA5524AA914000DDE6AA /* Nexa Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0892CA5324AA911600DDE6AA /* Nexa Light.otf */; };
+		0892CA5724AA960900DDE6AA /* MochilaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892CA5624AA960900DDE6AA /* MochilaView.swift */; };
 		3E693E50248D84B400057622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E693E4F248D84B400057622 /* AppDelegate.swift */; };
 		3E693E52248D84B400057622 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E693E51248D84B400057622 /* GameScene.sks */; };
 		3E693E54248D84B400057622 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E693E53248D84B400057622 /* Actions.sks */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0892CA5224AA911600DDE6AA /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
+		0892CA5324AA911600DDE6AA /* Nexa Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Light.otf"; sourceTree = "<group>"; };
+		0892CA5624AA960900DDE6AA /* MochilaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochilaView.swift; sourceTree = "<group>"; };
 		3E693E4C248D84B400057622 /* Outer Space.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Outer Space.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E693E4F248D84B400057622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E693E51248D84B400057622 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -88,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0892CA5124AA90B200DDE6AA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0892CA5224AA911600DDE6AA /* Nexa Bold.otf */,
+				0892CA5324AA911600DDE6AA /* Nexa Light.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		3E693E43248D84B400057622 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,8 @@
 				3E693E5C248D84B600057622 /* Assets.xcassets */,
 				3E693E5E248D84B600057622 /* LaunchScreen.storyboard */,
 				3E693E61248D84B600057622 /* Info.plist */,
+				0892CA5624AA960900DDE6AA /* MochilaView.swift */,
+				0892CA5124AA90B200DDE6AA /* fonts */,
 			);
 			path = "Outer Space";
 			sourceTree = "<group>";
@@ -251,10 +268,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E693E5B248D84B500057622 /* Main.storyboard in Resources */,
+				0892CA5424AA913C00DDE6AA /* Nexa Bold.otf in Resources */,
 				3E693E52248D84B400057622 /* GameScene.sks in Resources */,
 				3E693E5D248D84B600057622 /* Assets.xcassets in Resources */,
 				3E693E60248D84B600057622 /* LaunchScreen.storyboard in Resources */,
 				3E693E54248D84B400057622 /* Actions.sks in Resources */,
+				0892CA5524AA914000DDE6AA /* Nexa Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +302,7 @@
 				3E693E56248D84B500057622 /* GameScene.swift in Sources */,
 				3E80AB7C248EF48100B065F3 /* MenuViewController.swift in Sources */,
 				3E80AB7E248EF4F200B065F3 /* ConfigViewController.swift in Sources */,
+				0892CA5724AA960900DDE6AA /* MochilaView.swift in Sources */,
 				3E693E58248D84B500057622 /* GameViewController.swift in Sources */,
 				3E693E84248D91E400057622 /* playerStateMachine.swift in Sources */,
 				3E693E50248D84B400057622 /* AppDelegate.swift in Sources */,
