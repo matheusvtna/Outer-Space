@@ -16,10 +16,14 @@ class PauseView: UIView {
     @IBOutlet var volumeOff: UIButton!
     func commonInit(){
             
-            Bundle.main.loadNibNamed("PauseView", owner: self, options: nil)
-            self.addSubview(contentView)
-
-
+        Bundle.main.loadNibNamed("PauseView", owner: self, options: nil)
+        self.addSubview(contentView)
+        
+        if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
+            //temos acesso ao game view controller aqui
+            //botei so um exemplo aq embaixo pra silenciar
+            contentView.frame = topMostViewController.view.frame
+        }
     }
 
     @IBAction func volumeFunc(_ sender: Any) {
