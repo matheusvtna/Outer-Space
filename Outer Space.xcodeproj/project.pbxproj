@@ -24,6 +24,7 @@
 		3E80AB7C248EF48100B065F3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80AB7B248EF48100B065F3 /* MenuViewController.swift */; };
 		3E80AB7E248EF4F200B065F3 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80AB7D248EF4F200B065F3 /* ConfigViewController.swift */; };
 		3E80AB80248EF51700B065F3 /* TransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E80AB7F248EF51700B065F3 /* TransportViewController.swift */; };
+		3E9A09A624ABDA6B00CB3608 /* MochilaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9A09A524ABDA6B00CB3608 /* MochilaView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		3E80AB7B248EF48100B065F3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3E80AB7D248EF4F200B065F3 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		3E80AB7F248EF51700B065F3 /* TransportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportViewController.swift; sourceTree = "<group>"; };
+		3E9A09A524ABDA6B00CB3608 /* MochilaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MochilaView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				3E693E5E248D84B600057622 /* LaunchScreen.storyboard */,
 				3E693E61248D84B600057622 /* Info.plist */,
 				0892CA5624AA960900DDE6AA /* MochilaView.swift */,
+				3E9A09A524ABDA6B00CB3608 /* MochilaView.xib */,
 				0892CA5124AA90B200DDE6AA /* fonts */,
 			);
 			path = "Outer Space";
@@ -267,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9A09A624ABDA6B00CB3608 /* MochilaView.xib in Resources */,
 				3E693E5B248D84B500057622 /* Main.storyboard in Resources */,
 				0892CA5424AA913C00DDE6AA /* Nexa Bold.otf in Resources */,
 				3E693E52248D84B400057622 /* GameScene.sks in Resources */,

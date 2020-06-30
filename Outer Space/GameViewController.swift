@@ -14,14 +14,16 @@ class GameViewController: UIViewController {
     
     public var bagView: MochilaView?
     public var aberto = false
-    let bag = UIButton()
-    let scene = SKScene(fileNamed: "GameScene")
+    public let bag = UIButton()
+    public var scene: SKScene?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
+            scene = SKScene(fileNamed: "GameScene")
+            
             if scene != nil {
                 // Set the scale mode to scale to fit the window
                 scene!.scaleMode = .aspectFill
@@ -31,7 +33,6 @@ class GameViewController: UIViewController {
             }
             
             view.ignoresSiblingOrder = false
-            
             view.showsFPS = false
             view.showsNodeCount = false
         }
@@ -40,10 +41,11 @@ class GameViewController: UIViewController {
         bag.addTarget(nil, action: #selector (tapBagButton), for: .touchUpInside)
         bag.setImage(UIImage(named: "botaoAbrir.png"), for: .normal)
         
+        
         bagView = MochilaView(frame: CGRect(x: 596, y: 0, width: 300, height: self.view.frame.height))
         bagView!.isHidden = true
         
-        view.addSubview(bag)
+        self.view.addSubview(bag)
         self.view.addSubview(bagView!)
     }
 
@@ -65,20 +67,22 @@ class GameViewController: UIViewController {
     
     @objc func tapBagButton(){
         if aberto == false {
-            bagView?.isHidden = false
+            bagView!.isHidden = false
             bag.frame = CGRect(x: self.view.frame.width - 340, y: (self.view.frame.height/2) - 33, width: 40, height: 67)
             bag.setImage(UIImage(named: "botaoFechar.png"), for: .normal)
             aberto = true
-            scene?.isUserInteractionEnabled = false
-            bagView?.isUserInteractionEnabled = true
+            
+            self.scene?.isUserInteractionEnabled = false
+            self.bagView?.isUserInteractionEnabled = true
         }
         else {
-            bagView?.isHidden = true
+            bagView!.isHidden = true
             bag.frame = CGRect(x: self.view.frame.width - 40, y: (self.view.frame.height/2) - 33, width: 40, height: 67)
             bag.setImage(UIImage(named: "botaoAbrir.png"), for: .normal)
             aberto = false
-            scene?.isUserInteractionEnabled = true
-            bagView?.isUserInteractionEnabled = false
+            
+            self.scene?.isUserInteractionEnabled = true
+            self.bagView?.isUserInteractionEnabled = false
         }
     }
 }
