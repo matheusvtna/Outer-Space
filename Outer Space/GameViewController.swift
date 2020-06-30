@@ -12,6 +12,8 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     var pauseView: PauseView?
+    
+    var scene: SKScene?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,9 +21,11 @@ class GameViewController: UIViewController {
         pauseView!.isHidden = true
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            scene = SKScene(fileNamed: "GameScene")
+            
+            if scene != nil {
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+                scene!.scaleMode = .aspectFill
                 
                 // Present the scene
                 view.presentScene(scene)
@@ -60,6 +64,7 @@ class GameViewController: UIViewController {
     }
     
     @objc func tapPauseButton() {
+        self.scene?.isUserInteractionEnabled = false
         self.pauseView!.isHidden = false
     }
 }

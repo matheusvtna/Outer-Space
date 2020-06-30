@@ -20,9 +20,8 @@ class PauseView: UIView {
         self.addSubview(contentView)
         
         if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
-            //temos acesso ao game view controller aqui
-            //botei so um exemplo aq embaixo pra silenciar
-            contentView.frame = topMostViewController.view.frame
+            
+            topMostViewController.scene?.isUserInteractionEnabled = false
         }
     }
 
@@ -41,6 +40,10 @@ class PauseView: UIView {
     }
     @IBAction func playFunc(_ sender: Any) {
         self.isHidden = true
+        if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
+            
+            topMostViewController.scene?.isUserInteractionEnabled = true
+        }
     }
     override init(frame: CGRect) {
             super.init(frame: frame)
