@@ -60,6 +60,7 @@ class GameScene: SKScene {
         ]
  
         playerStateMachine.enter(IdleState.self)
+        
         player?.position = CGPoint(x: -1300, y: frame.midY)
     }
     
@@ -139,7 +140,7 @@ extension GameScene{
         
         for message in messages{
             
-            print(self.player?.position.x ?? "")
+            //print(self.player?.position.x ?? "")
             if message.condition(){
                 index += 1
                 if !message.completion{
@@ -231,5 +232,13 @@ extension GameScene: SKPhysicsContactDelegate {
             let die = SKAction.move(to: CGPoint(x: -300, y: -100), duration: 0.0)
             player?.run(die)
         }
+        if collision.matches(.player, .ground){
+            shadow?.alpha = 1
+            playerStateMachine.enter(LandingState.self)
+        }
+        else{
+            shadow?.alpha = 0
+        }
+        
     }
 }

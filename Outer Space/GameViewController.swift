@@ -13,7 +13,7 @@ import GameplayKit
 class GameViewController: UIViewController {
     var pauseView: PauseView?
     
-    var scene: SKScene?
+    var scene: GameScene?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
 
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            scene = SKScene(fileNamed: "GameScene")
+            scene = GameScene(fileNamed: "GameScene")
             
             if scene != nil {
                 // Set the scale mode to scale to fit the window
