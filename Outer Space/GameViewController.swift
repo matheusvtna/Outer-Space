@@ -10,16 +10,19 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
-    
+class GameViewController: UIViewController {    
     public var bagView: MochilaView?
     public var aberto = false
     public let bag = UIButton()
-    public var scene: SKScene?
+    var pauseView: PauseView? 
+    var scene: SKScene?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pauseView = PauseView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        pauseView!.isHidden = true
+
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             scene = SKScene(fileNamed: "GameScene")
@@ -45,6 +48,14 @@ class GameViewController: UIViewController {
         bagView = MochilaView(frame: CGRect(x: 596, y: 0, width: 300, height: self.view.frame.height))
         bagView!.isHidden = true
         
+        let pauseButtonIm = "pause.png"
+        let pauseButtonImage = UIImage(named: pauseButtonIm)
+        let pauseButton = UIButton(frame: CGRect(x: 27, y: 23, width: 15, height: 19))
+        pauseButton.addTarget(nil, action: #selector (tapPauseButton), for: .touchUpInside)
+        pauseButton.setImage(pauseButtonImage, for: .normal)
+        
+        view.addSubview(pauseButton)
+        self.view.addSubview(pauseView!)
         self.view.addSubview(bag)
         self.view.addSubview(bagView!)
     }
@@ -84,5 +95,11 @@ class GameViewController: UIViewController {
             self.scene?.isUserInteractionEnabled = true
             self.bagView?.isUserInteractionEnabled = false
         }
+
+    }
+    
+    @objc func tapPauseButton() {
+        self.scene?.isUserInteractionEnabled = false
+        self.pauseView!.isHidden = false
     }
 }
