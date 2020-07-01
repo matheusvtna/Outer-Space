@@ -14,6 +14,8 @@ class MochilaView : UIView, UICollectionViewDelegate, UICollectionViewDataSource
     public let header = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
     @IBOutlet var contentView: UIView!
     
+    var artifacts: [Artifact] = []
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -30,6 +32,7 @@ class MochilaView : UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         contentView.backgroundColor = .clear
         fundo.backgroundColor = #colorLiteral(red: 0.137254902, green: 0.137254902, blue: 0.137254902, alpha: 1)
+        
         
         //header
         header.text = "ITENS RECUPERADOS"
@@ -64,12 +67,26 @@ class MochilaView : UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if let game = UIApplication.shared.topMostViewController() as? GameViewController{
+            return game.bank.foundArtifacts().count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? ItemCollectionViewCell
-        return cell!
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? ItemCollectionViewCell else{
+            fatalError()
+        }
+        
+        if let game = UIApplication.shared.topMostViewController() as? GameViewController{
+            
+            let artifact = game.bank.foundArtifacts()[indexPath.row]
+            cell.titulo.text = artifact.name
+            cell.descricao.text = artifact.description
+            cell.icon.image = artifact.image
+        }
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -89,18 +106,18 @@ public class ItemCollectionViewCell: UICollectionViewCell {
         super.init(frame:frame)
         
         //titulo
-        titulo.text = "Item genérico"
+        
         titulo.textColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
         titulo.font = UIFont(name: "Nexa Bold", size: 14)
         
         //descricao
-        descricao.text = "\"Tese\" o mais importante é expor a ideia central sobre o tema de maneira clara. Importante lembrar que a Introdução é a parte mais importante do texto e por isso deve conter a informações que logo serão desenvolvidas."
+        
         descricao.textColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
         descricao.numberOfLines = 5
         descricao.font = UIFont(name: "Nexa Light", size: 12)
         
         //icon
-        icon.image = UIImage(named: "mochila.png")
+        icon.contentMode = .scaleAspectFit
 
         self.addSubview(icon)
         self.addSubview(descricao)
