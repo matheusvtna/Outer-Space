@@ -101,9 +101,6 @@ class GameViewController: UIViewController {
                 self.aberto = true
             }
             
-            if((scene?.player?.position.x)! > 100.0){
-                bank.artifacts[1].find()
-            }
             
             self.scene?.isUserInteractionEnabled = false
             self.bagView?.isUserInteractionEnabled = true

@@ -80,8 +80,8 @@ class MenuViewController: UIViewController {
         
         print("Start from tap")
         
-        let transportView = storyboard?.instantiateViewController(identifier: "TransportViewController") as! TransportViewController
-        self.present(transportView, animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(identifier: "GameViewController") as! GameViewController
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
