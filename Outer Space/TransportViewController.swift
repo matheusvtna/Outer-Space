@@ -78,6 +78,11 @@ class TransportViewController: UIViewController{
             let gameView = storyboard?.instantiateViewController(identifier: "GameViewController") as! GameViewController
             self.present(gameView, animated: true, completion: nil)
         }
+        else if sender == planetaTerra{
+            let gameView = storyboard?.instantiateViewController(identifier: "SoonViewController") as! SoonViewController
+            self.present(gameView, animated: true, completion: nil)
+        
+        }
         else{
             label.alpha = 0
             label.isHidden = false
