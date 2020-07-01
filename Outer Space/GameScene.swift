@@ -19,6 +19,8 @@ class GameScene: SKScene {
     var cameraNode : SKCameraNode?
     var mountain1 : SKNode?
     var portal: SKNode?
+    var artifact: SKNode?
+    
     // Joystick
     var joystickAction = false
     var knobRadius: CGFloat = 50.0
@@ -42,7 +44,7 @@ class GameScene: SKScene {
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
         mountain1 = childNode(withName: "camadas")
         portal = childNode(withName: "portal")
-        
+        artifact = childNode(withName: "artifact1")
         
         playerStateMachine = GKStateMachine(states: [
         JumpingState(playerNode: player!),
@@ -70,7 +72,15 @@ class GameScene: SKScene {
 }
 
 extension GameScene{
-    
+    func checkPosition(node1: SKNode, node2: SKNode, distance: CGFloat)->Bool{
+        if abs(node1.position.x - node2.position.x) > distance{
+            return false
+        }
+        else if abs(node1.position.x + node1.frame.width - node2.frame.width - node2.position.x) > distance{
+            return false
+        }
+        return true
+    }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             if let joystickKnob = joystickKnob {
@@ -81,13 +91,20 @@ extension GameScene{
             
             let location = touch.location(in: self)
             
-            if (portal?.contains(location))!{
+            if (portal?.contains(location))! && checkPosition(node1: player!, node2: portal!,distance: 100){
                 if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TransportViewController") as! TransportViewController
                     topMostViewController.present(vc, animated: true)
                 }
             }
-            if !(joystick?.contains(location))! {
+            else if (artifact?.contains(location))! && checkPosition(node1: player!, node2: artifact!,distance: 40){
+                if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
+                    let index = artifact?.name?.last?.wholeNumberValue ?? 0
+                    topMostViewController.bank.artifacts[index].find()
+                    artifact?.removeFromParent()
+                }
+            }
+            else if !(joystick?.contains(location))! {
                 playerStateMachine.enter(JumpingState.self)
             }
             
