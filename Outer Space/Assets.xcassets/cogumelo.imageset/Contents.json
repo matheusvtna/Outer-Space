@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "mochila@1x.png",
+      "filename" : "cogumelo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mochila@2x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "mochila@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

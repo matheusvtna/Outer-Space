@@ -26,7 +26,7 @@ class GameScene: SKScene {
     // Animation
     var previousTimeInterval: TimeInterval = 0
     var playerIsFacingRight = true
-    let playerSpeed = 4.0
+    let playerSpeed = 3.0
     var playerStateMachine : GKStateMachine!
     
     var messages: [Message] = []
@@ -53,8 +53,8 @@ class GameScene: SKScene {
         messages = [
             Message(text: "use o joystick para se movimentar", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -1000}),
             Message(text: "toque na tela para pular com o jetpack", position: CGPoint(x: -120, y: frame.midY + 20), condition: {(self.player?.position.x)! >= -300}),
-            Message(text: "que objeto é esse? toque para guardá-lo na sua mochila.", position: CGPoint(x: 200, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
-            Message(text: "se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 250, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 300}),
+            Message(text: "que troço é esse? toque para guardá-lo na sua mochila.", position: CGPoint(x: 180, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
+            Message(text: "se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 350, y: frame.midY + 90), condition: {(self.player?.position.x)! >= 300}),
             Message(text: "toque no portal para entrar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
             
         ]
@@ -146,6 +146,9 @@ extension GameScene{
                 index += 1
                 if !message.completion{
                     
+
+                    message.label.alpha = 0.0
+                    message.label.run(SKAction.fadeIn(withDuration: 2.0))
                     message.completion = true
                     message.label.text = message.text
                     message.label.position = message.position
@@ -158,7 +161,10 @@ extension GameScene{
             }
         }
         if index > 1{
-            messages[0].label.alpha = 0
+            messages[0].label.alpha = 1
+            
+            messages[0].label.run(SKAction.sequence([.fadeOut(withDuration: 2.0),.removeFromParent()]))
+            
             messages.remove(at: 0)
             
         }

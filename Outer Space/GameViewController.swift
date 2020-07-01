@@ -17,8 +17,13 @@ class GameViewController: UIViewController {
     var pauseView: PauseView? 
     var scene: GameScene?
     
+    let bank = ArtifactBank()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bank.artifacts[0].find()
+        bank.artifacts[2].find()
         
         pauseView = PauseView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         pauseView!.isHidden = true
@@ -62,6 +67,12 @@ class GameViewController: UIViewController {
         
     }
     
+    func createArtifacts(){
+        
+        
+
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -79,6 +90,7 @@ class GameViewController: UIViewController {
     }
     
     @objc func tapBagButton(){
+        
         if aberto == false {
             bagView!.isHidden = false
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
@@ -88,8 +100,15 @@ class GameViewController: UIViewController {
             }) { _ in
                 self.aberto = true
             }
+            
+            if((scene?.player?.position.x)! > 100.0){
+                bank.artifacts[1].find()
+            }
+            
             self.scene?.isUserInteractionEnabled = false
             self.bagView?.isUserInteractionEnabled = true
+            
+            self.bagView?.collectionView.reloadData()
         }
         else {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
