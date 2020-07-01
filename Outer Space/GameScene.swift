@@ -57,9 +57,9 @@ class GameScene: SKScene {
         messages = [
             Message(text: "use o joystick para se movimentar", position: CGPoint(x: -530, y: frame.midY), condition: {(self.player?.position.x)! >= -1000}),
             Message(text: "toque na tela para pular com o jetpack", position: CGPoint(x: -120, y: frame.midY + 20), condition: {(self.player?.position.x)! >= -300}),
-            Message(text: "que troço é esse? toque para guardá-lo na sua mochila.", position: CGPoint(x: 180, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
-            Message(text: "se precisar abrir sua mochila, aperte o botão da direita", position: CGPoint(x: 350, y: frame.midY + 90), condition: {(self.player?.position.x)! >= 300}),
-            Message(text: "toque no portal para entrar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
+            Message(text: "o que será isso? toque para coletá-lo.", position: CGPoint(x: 180, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 60}),
+            Message(text: "se precisar ver seus itens, aperte o botão na direita", position: CGPoint(x: 350, y: frame.midY + 90), condition: {(self.player?.position.x)! >= 300}),
+            Message(text: "toque no portal para viajar", position: CGPoint(x: 700, y: frame.midY + 60), condition: {(self.player?.position.x)! >= 550})
             
         ]
  
