@@ -61,8 +61,8 @@ class GameScene: SKScene {
  
         playerStateMachine.enter(IdleState.self)
         
-        let start = SKAction.move(to: CGPoint(x: -900, y: -100), duration: 0.0)
-        player?.run(start)
+        //let start = SKAction.move(to: CGPoint(x: -900, y: -100), duration: 0.0)
+        //player?.run(start)
     }
     
 }
