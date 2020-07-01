@@ -20,7 +20,6 @@ class PauseView: UIView {
         self.addSubview(contentView)
         
         if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
-            
             topMostViewController.scene?.isUserInteractionEnabled = false
         }
     }
@@ -39,12 +38,14 @@ class PauseView: UIView {
         
     }
     @IBAction func playFunc(_ sender: Any) {
-        self.isHidden = true
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: {
+            self.alpha = 0
+        }) { _ in
+            self.isHidden = true
+        }
         if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
-            
             topMostViewController.scene?.isUserInteractionEnabled = true
             topMostViewController.bag.isUserInteractionEnabled = true
-
         }
     }
     override init(frame: CGRect) {

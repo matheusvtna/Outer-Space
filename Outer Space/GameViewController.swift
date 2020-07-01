@@ -16,13 +16,13 @@ class GameViewController: UIViewController {
     public let bag = UIButton()
     var pauseView: PauseView? 
     var scene: GameScene?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pauseView = PauseView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         pauseView!.isHidden = true
-
+        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             scene = GameScene(fileNamed: "GameScene")
@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
         bag.setImage(UIImage(named: "botaoAbrir.png"), for: .normal)
         
         
-        bagView = MochilaView(frame: CGRect(x: 596, y: 0, width: 300, height: self.view.frame.height))
+        bagView = MochilaView(frame: CGRect(x: 896, y: 0, width: 300, height: self.view.frame.height))
         bagView!.isHidden = true
         
         let pauseButtonIm = "pause.png"
@@ -61,11 +61,11 @@ class GameViewController: UIViewController {
         self.view.addSubview(pauseView!)
         
     }
-
+    
     override var shouldAutorotate: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -73,7 +73,7 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -81,28 +81,38 @@ class GameViewController: UIViewController {
     @objc func tapBagButton(){
         if aberto == false {
             bagView!.isHidden = false
-            bag.frame = CGRect(x: self.view.frame.width - 340, y: (self.view.frame.height/2) - 33, width: 40, height: 67)
-            bag.setImage(UIImage(named: "botaoFechar.png"), for: .normal)
-            aberto = true
-            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.bagView?.frame = CGRect(x: 596, y: 0, width: 300, height: self.view.frame.height)
+                self.bag.frame = CGRect(x: self.view.frame.width - 340, y: (self.view.frame.height/2) - 33, width: 40, height: 67)
+                self.bag.setImage(UIImage(named: "botaoFechar.png"), for: .normal)
+            }) { _ in
+                self.aberto = true
+            }
             self.scene?.isUserInteractionEnabled = false
             self.bagView?.isUserInteractionEnabled = true
         }
         else {
-            bagView!.isHidden = true
-            bag.frame = CGRect(x: self.view.frame.width - 40, y: (self.view.frame.height/2) - 33, width: 40, height: 67)
-            bag.setImage(UIImage(named: "botaoAbrir.png"), for: .normal)
-            aberto = false
-            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.bagView?.frame = CGRect(x: 896, y: 0, width: 300, height: self.view.frame.height)
+                self.bag.frame = CGRect(x: self.view.frame.width - 40, y: (self.view.frame.height/2) - 33, width: 40, height: 67)
+                self.bag.setImage(UIImage(named: "botaoAbrir.png"), for: .normal)
+            }) { _ in
+                self.bagView!.isHidden = true
+                self.aberto = false
+            }
             self.scene?.isUserInteractionEnabled = true
             self.bagView?.isUserInteractionEnabled = false
         }
-
     }
     
     @objc func tapPauseButton() {
-        self.scene?.isUserInteractionEnabled = false
+        self.pauseView!.alpha = 0
         self.pauseView!.isHidden = false
-        self.bag.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveLinear, animations: {
+            self.pauseView!.alpha = 1
+        }) { _ in
+            self.scene?.isUserInteractionEnabled = false
+            self.bag.isUserInteractionEnabled = false
+        }
     }
 }
