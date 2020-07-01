@@ -18,7 +18,7 @@ class GameScene: SKScene {
     var joystickKnob: SKNode?
     var cameraNode : SKCameraNode?
     var mountain1 : SKNode?
-    
+    var portal: SKNode?
     // Joystick
     var joystickAction = false
     var knobRadius: CGFloat = 50.0
@@ -41,6 +41,8 @@ class GameScene: SKScene {
         joystickKnob = joystick?.childNode(withName: "knob")
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
         mountain1 = childNode(withName: "camadas")
+        portal = childNode(withName: "portal")
+        
         
         playerStateMachine = GKStateMachine(states: [
         JumpingState(playerNode: player!),
@@ -76,10 +78,20 @@ extension GameScene{
                 joystickAction = joystickKnob.frame.contains(location)
             }
             
+            
             let location = touch.location(in: self)
+            
+            if (portal?.contains(location))!{
+                if let topMostViewController = UIApplication.shared.topMostViewController() as? GameViewController{
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "TransportViewController") as! TransportViewController
+                    topMostViewController.present(vc, animated: true)
+                }
+            }
             if !(joystick?.contains(location))! {
                 playerStateMachine.enter(JumpingState.self)
             }
+            
+            
             
         }
     }
