@@ -89,7 +89,7 @@ public class ItemCollectionViewCell: UICollectionViewCell {
         super.init(frame:frame)
         
         //titulo
-        titulo.text = "Bilola de Brennand"
+        titulo.text = "Item genérico"
         titulo.textColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
         titulo.font = UIFont(name: "Nexa Bold", size: 14)
         
