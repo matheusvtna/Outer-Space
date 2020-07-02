@@ -80,8 +80,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque para continuar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n81-dU-1wo">
-                                <rect key="frame" x="382" y="381" width="132" height="18"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
+                                <rect key="frame" x="373" y="381" width="150" height="15"/>
+                                <fontDescription key="fontDescription" name="NexaLight" family="Nexa Light" pointSize="15"/>
                                 <color key="textColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -392,17 +392,17 @@
                                     <action selector="touchBackButton" destination="tv0-vE-ENn" eventType="touchUpInside" id="5yO-SZ-msz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planeta longe demais!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s26-fz-xJL">
-                                <rect key="frame" x="370.5" y="370" width="155" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Planeta longe demais!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s26-fz-xJL">
+                                <rect key="frame" x="374" y="363" width="154" height="27"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NexaLight" family="Nexa Light" pointSize="15"/>
                                 <color key="textColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para onde você deseja viajar?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRU-xQ-86t">
-                                <rect key="frame" x="338.5" y="25" width="219" height="20"/>
+                                <rect key="frame" x="320.5" y="25" width="255" height="22.5"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="19"/>
                                 <color key="textColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -421,11 +421,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iPm-A8-NGg" firstAttribute="leading" secondItem="SOY-Fx-e6G" secondAttribute="leading" constant="28" id="0C1-Na-imB"/>
+                            <constraint firstItem="SOY-Fx-e6G" firstAttribute="bottom" secondItem="s26-fz-xJL" secondAttribute="bottom" constant="3" id="2DS-E1-1Wn"/>
                             <constraint firstItem="ZRU-xQ-86t" firstAttribute="top" secondItem="SOY-Fx-e6G" secondAttribute="top" constant="25" id="E9c-ai-ltj"/>
                             <constraint firstItem="ZRU-xQ-86t" firstAttribute="centerX" secondItem="SOY-Fx-e6G" secondAttribute="centerX" id="Xvc-QL-1EQ"/>
-                            <constraint firstItem="SOY-Fx-e6G" firstAttribute="bottom" secondItem="s26-fz-xJL" secondAttribute="bottom" constant="3" id="ZTh-66-7WP"/>
                             <constraint firstItem="iPm-A8-NGg" firstAttribute="top" secondItem="SOY-Fx-e6G" secondAttribute="top" constant="25" id="asQ-Xb-bzV"/>
-                            <constraint firstItem="s26-fz-xJL" firstAttribute="centerX" secondItem="SOY-Fx-e6G" secondAttribute="centerX" id="qQ2-16-aON"/>
+                            <constraint firstItem="s26-fz-xJL" firstAttribute="centerX" secondItem="SOY-Fx-e6G" secondAttribute="centerX" constant="2.5" id="qQ2-16-aON"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SOY-Fx-e6G"/>
                     </view>
