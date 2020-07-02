@@ -113,7 +113,7 @@ public class ItemCollectionViewCell: UICollectionViewCell {
         //descricao
         
         descricao.textColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.8980392157, alpha: 1)
-        descricao.numberOfLines = 5
+        descricao.numberOfLines = 6
         descricao.font = UIFont(name: "Nexa Light", size: 12)
         
         //icon

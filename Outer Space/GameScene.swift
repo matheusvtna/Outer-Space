@@ -18,6 +18,9 @@ class GameScene: SKScene {
     var joystickKnob: SKNode?
     var cameraNode : SKCameraNode?
     var mountain1 : SKNode?
+    var mountain2 : SKNode?
+    var mountain3 : SKNode?
+    var moon: SKNode?
     var portal: SKNode?
     var artifact: SKNode?
     
@@ -42,7 +45,10 @@ class GameScene: SKScene {
         joystick = childNode(withName: "joystick")
         joystickKnob = joystick?.childNode(withName: "knob")
         cameraNode = childNode(withName:  "cameraNode") as? SKCameraNode
-        mountain1 = childNode(withName: "camadas")
+        mountain1 = childNode(withName: "camadas1")
+        mountain2 = childNode(withName: "camadas2")
+        mountain3 = childNode(withName: "camadas3")
+        moon = childNode(withName: "lua")
         portal = childNode(withName: "portal")
         artifact = childNode(withName: "artifact1")
         
@@ -65,8 +71,6 @@ class GameScene: SKScene {
  
         playerStateMachine.enter(IdleState.self)
         
-        //let start = SKAction.move(to: CGPoint(x: -900, y: -100), duration: 0.0)
-        //player?.run(start)
     }
     
 }
@@ -236,9 +240,18 @@ extension GameScene{
         
         shadow?.position = CGPoint(x: player!.position.x, y: player!.position.y - 47)
         
-//        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-10), duration: 0.0)
-//        mountain1?.run(parallax1)
-//
+        let parallaxMoon = SKAction.moveTo(x: (player?.position.x)!/(-5), duration: 0.0)
+        moon?.run(parallaxMoon)
+        
+        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-4), duration: 0.0)
+        mountain1?.run(parallax1)
+        
+        let parallax2 = SKAction.moveTo(x: (player?.position.x)!/(-3), duration: 0.0)
+        mountain2?.run(parallax2)
+
+        let parallax3 = SKAction.moveTo(x: (player?.position.x)!/(-2), duration: 0.0)
+        mountain3?.run(parallax3)
+        
     }
 }
 
