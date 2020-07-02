@@ -240,17 +240,17 @@ extension GameScene{
         
         shadow?.position = CGPoint(x: player!.position.x, y: player!.position.y - 47)
         
-        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-20), duration: 0.0)
+        let parallaxMoon = SKAction.moveTo(x: (player?.position.x)!/(-15), duration: 0.0)
+        moon?.run(parallaxMoon)
+        
+        let parallax1 = SKAction.moveTo(x: (player?.position.x)!/(-10), duration: 0.0)
         mountain1?.run(parallax1)
         
-        let parallax2 = SKAction.moveTo(x: (player?.position.x)!/(-15), duration: 0.0)
+        let parallax2 = SKAction.moveTo(x: (player?.position.x)!/(-8), duration: 0.0)
         mountain2?.run(parallax2)
 
-        let parallax3 = SKAction.moveTo(x: (player?.position.x)!/(-10), duration: 0.0)
+        let parallax3 = SKAction.moveTo(x: (player?.position.x)!/(-6), duration: 0.0)
         mountain3?.run(parallax3)
-        
-        let parallaxMoon = SKAction.moveTo(x: (player?.position.x)!/(-5), duration: 0.0)
-        moon?.run(parallaxMoon)
         
     }
 }
